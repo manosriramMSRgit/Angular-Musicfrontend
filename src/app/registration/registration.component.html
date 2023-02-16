@@ -1,0 +1,151 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+      a {
+  text-decoration: none;
+}
+body {
+  background: -webkit-linear-gradient(bottom, #434745, #34462a);
+  background-repeat: no-repeat;
+  height: 48em;
+  background-image: url('assets/img/5.jpg');
+    background-size: cover;
+}
+label {
+  font-family: "Raleway", sans-serif;
+  font-size: 11pt;
+}
+#forgot-pass {
+  color: #8bbd2d;
+  font-family: "Raleway", sans-serif;
+  font-size: 10pt;
+  margin-top: 3px;
+  text-align: right;
+}
+#card {
+  background: #fbfbfb;
+  border-radius: 8px;
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
+  height: 550px;
+  margin: 6rem auto 8.1rem auto;
+  width: 400px;
+}
+#card-content {
+  padding: 12px 44px;
+}
+#card-title {
+  font-family: "Raleway Thin", sans-serif;
+  letter-spacing: 4px;
+  padding-bottom: 23px;
+  padding-top: 13px;
+  text-align: center;
+}
+#signup {
+  color: #7a70af;
+  font-family: "Raleway", sans-serif;
+  font-size: 10pt;
+  margin-top: 16px;
+  text-align: center;
+}
+#submit-btn {
+  background: -webkit-linear-gradient(right, #e24242, #eb8489);
+  border: none;
+  border-radius: 21px;
+  box-shadow: 0px 1px 8px #232c26;
+  cursor: pointer;
+  color: white;
+  font-family: "Raleway SemiBold", sans-serif;
+  height: 42.3px;
+  margin: 0 auto;
+  margin-top: 50px;
+  transition: 0.25s;
+  width: 153px;
+}
+#submit-btn:hover {
+  box-shadow: 0px 1px 18px #2c3f31;
+}
+.form {
+  align-items: left;
+  display: flex;
+  flex-direction: column;
+}
+footer
+    {
+      font-family: "Audiowide", sans-serif;
+      margin-bottom: 0rem;
+      margin-right: 0rem;
+      
+      background: rgb(34, 31, 31);
+      text-align: center;
+    }
+.form-border {
+  background: -webkit-linear-gradient(right, #90f35a, #78ce86);
+  height: 1px;
+  width: 100%;
+}
+.form-content {
+  background: #fbfbfb;
+  border: none;
+  outline: none;
+  padding-top: 16px;
+}
+</style>
+</head>
+
+<body>
+    <br/>
+    <br/>
+    
+  <div id="card">
+    <div id="card-content">
+      <div id="card-title">
+        <h4>Registration</h4>
+      </div>
+      <form method="post" class="form" name="form" (ngSubmit)="f.form.valid &&  registerUser()" #f="ngForm" novalidate>
+        
+        
+        <label for="username" style="padding-top:13px"> &nbsp;Username </label>
+        <input id="username" class="form-content" type="text" name="userName" autocomplete="on" required  [(ngModel)]="form.userName" required #username="ngModel"
+        [class.is-invalid]="username.invalid && username.touched" />
+        <small class="text-danger" [class.d-none]="username.valid || username.untouched">Username is required field</small>
+
+        <div class="form-border"></div>
+        <label for="password" style="padding-top:22px">&nbsp;Password</label>
+        <input id="user-password" class="form-content" type="password" name="password"  [(ngModel)]="form.password"  required #password="ngModel"
+        [class.is-invalid]="password.valid && password.touched" />
+        <small class="text-danger" [class.d-none]=" password.valid || password.untouched">Password is required field</small>
+        
+        
+        <div class="form-border"></div>
+        <label for="password" style="padding-top:22px">&nbsp;Confirm Password</label>
+        <input id="user-password" class="form-content" type="password" name="cpassword" required #cpassword="ngModel" (ngModel)="form.password"
+        [class.is-invalid]="password.invalid && password.touched"/>
+        <small class="text-danger" [class.d-none]="(cpassword.value== password.value) || cpassword.untouched">Password and confirm password must be same</small>
+
+        
+
+        <div class="form-border"></div>
+        <label for="mobileNumber" style="padding-top:13px"> &nbsp;Mobile Number </label>
+        <input id="user-number" class="form-content" type="tel" name="number" 
+        autocomplete="on" required #mobileNumber="ngModel" [(ngModel)]="form.mobileNumber" 
+        [class.is-invalid]="mobileNumber.invalid && mobileNumber.touched"  />
+        <small class="text-danger" [class.d-none]="mobileNumber.valid || mobileNumber.untouched">Mobile Number is required</small>
+       
+        <div class="form-border"></div>
+        <label for="city" style="padding-top:13px"> ;Locality/city </label>
+        <input id="user-city" class="form-content" type="city" name="city" 
+        autocomplete="on" required #city="ngModel" [(ngModel)]="form.city" 
+        [class.is-invalid]="city.invalid && city.touched"  />
+        <small class="text-danger" [class.d-none]="city.valid || city.untouched">Locality is required</small>
+       
+        <div class="form-border"></div>
+        <input id="submit-btn" type="submit" name="submit" value="SIGN UP"  />
+        <a href="#" routerLink="/Login" id="signup">Already have an account ?</a>
+      </form>
+
+    </div>
+  </div>
+</body>

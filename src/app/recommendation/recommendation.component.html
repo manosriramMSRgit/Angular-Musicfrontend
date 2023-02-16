@@ -1,0 +1,86 @@
+<!-- <!DOCTYPE html>
+<html lang="en"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<style>body{background: -webkit-linear-gradient(bottom, #434745, #34462a);
+  background-repeat: no-repeat;
+  height: 48em;
+  background-image: url('assets/img/mu2.jpg');
+    background-size: cover;
+}
+  footer
+    {
+      font-family: "Audiowide", sans-serif;
+      margin-bottom: 0rem;
+      margin-right: 0rem;
+      
+      background: rgb(34, 31, 31);
+      text-align: center;
+    }
+  </style>
+</head>
+<body  >
+  <div>
+    <ul class="topnav" routerLinkActive="active">
+      <li>
+        <a   routerLink="/DisplayAll">DisplayAll</a>
+      </li>
+      <li>
+        <a   routerLink="/Favorites">Favorite</a>
+      </li>
+      <li>
+        <a  style="background-color: #000; color: rgb(241, 238, 238); font-weight: 900;" routerLink="/Recommend">Recommendation</a>
+      </li>
+      <li >
+        <a (click)="myFunction()" >Logout</a>
+
+    </li>
+    </ul>
+  </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container">
+      <table class="table table-dark table-hover">
+       
+        <thead> <h4>Recommended List</h4>  
+          <tr>
+            
+            <th > SONGNAME</th>
+            <th >SINGERNAME</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rec of getRecommendations;let i=index">
+            
+            <td>{{rec.songName}}</td>
+            <td>{{rec.singerName}}</td>
+    
+           
+          </tr>
+        </tbody>
+      </table>
+      <!-- <button type="button" class="btn btn-dark" routerLink="/StartingPage" >BACK</button> -->
+      </div>
+    
+    <script>
+      function myFunction() {
+        var txt;
+        if (confirm("Press a button!")) {
+          txt = "You pressed OK!";
+        } else {
+          txt = "You pressed Cancel!";
+        }
+        document.getElementById("demo").innerHTML = txt;
+      }
+      </script>
+</body>
+<!-- <footer style="background-color: azure;">
+  MusicApp Copyrights @ CGI
+</footer>
+</html> -->
