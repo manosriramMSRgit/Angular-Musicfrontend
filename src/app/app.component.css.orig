@@ -36,7 +36,11 @@
       width: 100%;
       position: fixed;
       overflow: hidden;
+<<<<<<< HEAD
       background-color: rgb(249, 245, 4);
+=======
+      background-color: rgb(246, 170, 6);
+>>>>>>> gitdemo
 
     }
     
